@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#baad98</color>
     <color name="colorPrimaryDark">#aca08d</color>
+    <color name="homeFontColor">#ffffff</color>
     <color name="colorAccent">#aca08d</color>
     <color name="colorTextIcons">#624f3f</color>
 </resources>
