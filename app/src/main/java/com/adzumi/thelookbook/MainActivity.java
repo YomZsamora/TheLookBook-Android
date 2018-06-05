@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         welcomeTextView = (TextView) findViewById(R.id.welcomeTextView);
-        Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_italic.ttf");
+        Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
         welcomeTextView.setTypeface(openSansFont);
     }
 }
