@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity"
-                  android:theme="@style/AppTheme">
+                  android:theme="@style/AppTheme"
+                  android:resource="@xml/searchable">
         </activity>
     </application>
 

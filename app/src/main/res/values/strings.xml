@@ -2,5 +2,4 @@
     <string name="app_name">TheLookBook</string>
     <string name="welcome_message">Deciding what to read next? You’re in the right place. Tell the app what titles or genres you enjoy and it’ll give you surprisingly insightful recommendations.</string>
     <string name="app_label">Search</string>
-    <string name="search_hint">Title, Author ...</string>
 </resources>
