@@ -24,10 +24,4 @@ The App does the following:
 4. Attach the adapter for the books to a ListView to display the data on screen
 
 
-##### Technologies Used
-- Android SDK
-- Android Studio IDE
-- Android Emulator
-
-
 
