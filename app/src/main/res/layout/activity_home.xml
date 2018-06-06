@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageView
@@ -27,16 +28,46 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/introductionTextView"
         android:layout_marginTop="78dp"
+        android:paddingBottom="8dp"
         android:text="Let's Start! Which book are you currently reading?" />
 
     <EditText
         android:id="@+id/whichBookEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="254dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/introductionTextView"
         android:layout_below="@+id/whichBookTextView"
-        android:ems="10"
+        android:layout_marginStart="-3dp"
+        android:ems="11"
         android:inputType="textPersonName"
-        android:text="Name" />
+        tools:hint="Enter Book ..." />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView1"
+        android:layout_alignParentEnd="true"
+        android:text="Search"
+        android:theme="@style/PrimaryButton" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="319dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:text="View Winners"
+        android:theme="@style/PrimaryButton" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:text="Announcing the winners of the 2017 Goodreads Choice Awards, the only major book awards decided by readers" />
 
 </RelativeLayout>
