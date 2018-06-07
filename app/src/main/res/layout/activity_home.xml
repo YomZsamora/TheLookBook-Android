@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
@@ -43,7 +44,7 @@
         tools:hint="Enter Book ..." />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/searchBookButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/imageView1"
@@ -52,7 +53,7 @@
         android:theme="@style/PrimaryButton" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/viewWinnersButton"
         android:layout_width="319dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView1"
@@ -61,13 +62,23 @@
         android:theme="@style/PrimaryButton" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/winnersTextView"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/viewWinnersButton"
         android:layout_centerHorizontal="true"
         android:gravity="center"
+        android:text="Announcing the winners of the 2017 Goodreads Choice Awards, the only major book awards decided by readers"
         android:textSize="10dp"
-        android:text="Announcing the winners of the 2017 Goodreads Choice Awards, the only major book awards decided by readers" />
+        tools:fontFamily="@font/opensans" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="76dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        app:srcCompat="@drawable/ic_search" />
 
 </RelativeLayout>
