@@ -72,4 +72,23 @@
         android:textSize="10dp"
         tools:fontFamily="@font/opensans" />
 
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/winnersTextView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="New Text"
+        android:textSize="10dp"
+        tools:fontFamily="@font/opensans" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/locationTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

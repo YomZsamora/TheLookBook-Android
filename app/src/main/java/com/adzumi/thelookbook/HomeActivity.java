@@ -1,5 +1,6 @@
 package com.adzumi.thelookbook;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,12 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.whichBookTextView) TextView whichBookTextView;
     @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.locationTextView) TextView mLocationTextView;
+
+    private String[] books = new String[] {"The Shining", "IT: PennyWise the Clown",
+            "The Stand", "The Gunslinger", "Carrie", "Misery",
+            "Pet Sematary", "Under the Dome", "The Green Mile", "Cujo",
+            "Doctor Sleep", "The Drawing of the Three", "Cell"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +34,12 @@ public class HomeActivity extends AppCompatActivity {
         introductionTextView.setTypeface(openSansFont);
         whichBookTextView.setTypeface(openSansFont);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
         mListView.setAdapter(adapter);
+
+        Intent intent = getIntent();
+        String location = intent.getStringExtra("location");
+        mLocationTextView.setText("Here are all the restaurants near: " + location);
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
