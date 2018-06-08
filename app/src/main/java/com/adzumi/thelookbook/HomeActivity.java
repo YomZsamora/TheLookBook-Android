@@ -4,21 +4,22 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import android.view.MenuInflater;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private TextView introductionTextView;
-    private TextView whichBookTextView;
+    @BindView(R.id.introductionTextView) TextView introductionTextView;
+    @BindView(R.id.whichBookTextView) TextView whichBookTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
 
-        introductionTextView = (TextView) findViewById(R.id.introductionTextView);
-        whichBookTextView = (TextView) findViewById(R.id.whichBookTextView);
         Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
         introductionTextView.setTypeface(openSansFont);
         whichBookTextView.setTypeface(openSansFont);

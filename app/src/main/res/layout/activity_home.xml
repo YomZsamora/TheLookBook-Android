@@ -72,13 +72,4 @@
         android:textSize="10dp"
         tools:fontFamily="@font/opensans" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="76dp"
-        android:layout_height="35dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
-        app:srcCompat="@drawable/ic_search" />
-
 </RelativeLayout>
