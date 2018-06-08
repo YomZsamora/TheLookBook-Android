@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.welcomeTextView) TextView welcomeTextView;
-    @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
+    @BindView(R.id.findRestaurantsButton) TextView mFindRestaurantsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
