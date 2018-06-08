@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.welcomeTextView) TextView welcomeTextView;
-    @BindView(R.id.findRestaurantsButton) TextView mFindRestaurantsButton;
+    @BindView(R.id.welcomeButton) Button mWelcomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
         welcomeTextView.setTypeface(openSansFont);
 
-        mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
+        mWelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);

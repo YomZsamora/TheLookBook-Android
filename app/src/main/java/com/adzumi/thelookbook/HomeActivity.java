@@ -4,21 +4,29 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.whichBookTextView) TextView whichBookTextView;
     @BindView(R.id.winnersTextView) TextView mWinnersTextView;
     @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.booksTextView) TextView mBooksTextView;
+    @BindView(R.id.searchBookButton) Button mSearchBookButton;
+    @BindView(R.id.whichBookEditText) EditText mWhichBookEditText;
 
     private String[] books = new String[] {"The Shining", "IT: PennyWise the Clown",
             "The Stand", "The Gunslinger", "Carrie", "Misery",
@@ -45,6 +53,17 @@ public class HomeActivity extends AppCompatActivity {
         mListView.setAdapter(adapter);
 
         mBooksTextView.setText("Here are some of Stephen King's Books: ");
+
+        mSearchBookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String currentBook = mWhichBookEditText.getText().toString();
+                Intent intent = new Intent(HomeActivity.this, CurrentBookActivity.class);
+                Log.d(TAG, currentBook);
+//                intent.putExtra("currentBook", currentBook);
+                startActivity(intent);
+            }
+        });
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
