@@ -21,6 +21,7 @@
             android:name=".HomeActivity"
             android:resource="@xml/searchable"
             android:theme="@style/AppTheme"></activity>
+
         <activity android:name=".CurrentBookActivity"
             android:resource="@xml/searchable"
             android:theme="@style/AppTheme"></activity>

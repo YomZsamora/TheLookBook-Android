@@ -52,15 +52,14 @@ public class HomeActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
         mListView.setAdapter(adapter);
 
-        mBooksTextView.setText("Here are some of Stephen King's Books: ");
+        mBooksTextView.setText("Here's a list of some of Stephen King's Books: ");
 
         mSearchBookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String currentBook = mWhichBookEditText.getText().toString();
                 Intent intent = new Intent(HomeActivity.this, CurrentBookActivity.class);
-                Log.d(TAG, currentBook);
-//                intent.putExtra("currentBook", currentBook);
+                intent.putExtra("currentBook", currentBook);
                 startActivity(intent);
             }
         });

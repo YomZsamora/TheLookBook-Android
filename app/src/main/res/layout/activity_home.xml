@@ -79,7 +79,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="New Text"
-        android:textSize="15dp" />
+        android:textSize="12dp" />
 
     <ListView
         android:id="@+id/listView"
