@@ -16,8 +16,9 @@ public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.whichBookTextView) TextView whichBookTextView;
+    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
     @BindView(R.id.listView) ListView mListView;
-    @BindView(R.id.locationTextView) TextView mLocationTextView;
+    @BindView(R.id.booksTextView) TextView mBooksTextView;
 
     private String[] books = new String[] {"The Shining", "IT: PennyWise the Clown",
             "The Stand", "The Gunslinger", "Carrie", "Misery",
@@ -30,16 +31,20 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
-        introductionTextView.setTypeface(openSansFont);
-        whichBookTextView.setTypeface(openSansFont);
+        Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
+        introductionTextView.setTypeface(openSansFontLight);
+        whichBookTextView.setTypeface(openSansFontLight);
+
+        Typeface openSansFontItalic = Typeface.createFromAsset(getAssets(), "fonts/opensans_italic.ttf");
+        mWinnersTextView.setTypeface(openSansFontItalic);
+
+        Typeface openSansFontSemiBold = Typeface.createFromAsset(getAssets(), "fonts/opensans_semibold.ttf");
+        mBooksTextView.setTypeface(openSansFontSemiBold);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
         mListView.setAdapter(adapter);
 
-        Intent intent = getIntent();
-        String location = intent.getStringExtra("location");
-        mLocationTextView.setText("Here are all the restaurants near: " + location);
+        mBooksTextView.setText("Here are some of Stephen King's Books: ");
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
