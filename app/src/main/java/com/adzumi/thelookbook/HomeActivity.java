@@ -7,12 +7,15 @@ import android.view.Menu;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import android.view.MenuInflater;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.whichBookTextView) TextView whichBookTextView;
+    @BindView(R.id.listView) ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,9 @@ public class HomeActivity extends AppCompatActivity {
         Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
         introductionTextView.setTypeface(openSansFont);
         whichBookTextView.setTypeface(openSansFont);
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
+        mListView.setAdapter(adapter);
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
