@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -29,5 +31,12 @@ public class CurrentBookActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
         mCurrentBookTextView.setText("" + currentBook + "");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
     }
 }

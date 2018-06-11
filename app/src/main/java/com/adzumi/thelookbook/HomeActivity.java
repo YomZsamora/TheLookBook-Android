@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.whichBookTextView) TextView whichBookTextView;
