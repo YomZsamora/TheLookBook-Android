@@ -89,13 +89,21 @@
         android:text="New Text"
         android:textSize="12dp" />
 
-    <ListView
-        android:id="@+id/listView"
+    <LinearLayout
+        android:id="@+id/infoSection"
         android:layout_width="match_parent"
-        android:layout_height="154dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/booksTextView" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/booksTextView">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true" />
+
+    </LinearLayout>
 
 </RelativeLayout>

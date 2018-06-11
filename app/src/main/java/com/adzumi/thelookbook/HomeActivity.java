@@ -27,6 +27,11 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.searchBookButton) Button mSearchBookButton;
     @BindView(R.id.whichBookEditText) EditText mWhichBookEditText;
 
+    private int[] booksImages = new int[] {R.drawable.theshining, R.drawable.it,
+            R.drawable.thestand, R.drawable.thegunslinger, R.drawable.goodreads, R.drawable.misery,
+            R.drawable.petsematary, R.drawable.underthedome, R.drawable.thegreenmile, R.drawable.cujo,
+            R.drawable.doctorsleep, R.drawable.drawingofthethree, R.drawable.goodreads};
+
     private String[] books = new String[] {"The Shining", "IT: PennyWise the Clown",
             "The Stand", "The Gunslinger", "Carrie", "Misery",
             "Pet Sematary", "Under the Dome", "The Green Mile", "Cujo",
@@ -48,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         Typeface openSansFontSemiBold = Typeface.createFromAsset(getAssets(), "fonts/opensans_semibold.ttf");
         mBooksTextView.setTypeface(openSansFontSemiBold);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, books);
+        ArrayAdapter adapter = new CustomAdapter(this, books);
         mListView.setAdapter(adapter);
 
         mBooksTextView.setText("Here's a list of some of Stephen King's Books: ");

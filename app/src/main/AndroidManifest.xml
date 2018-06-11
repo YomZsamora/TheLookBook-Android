@@ -20,12 +20,21 @@
         <activity
             android:name=".HomeActivity"
             android:resource="@xml/searchable"
-            android:theme="@style/AppTheme"
-            ></activity>
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.adzumi.thelookbook.MainActivity">
+            </meta-data>
+        </activity>
 
         <activity android:name=".CurrentBookActivity"
             android:resource="@xml/searchable"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.adzumi.thelookbook.MainActivity">
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>
