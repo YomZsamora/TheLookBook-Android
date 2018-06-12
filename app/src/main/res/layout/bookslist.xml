@@ -15,12 +15,12 @@
 
     <TextView
         android:id="@+id/authorName"
-        android:layout_width="132dp"
+        android:layout_width="261dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/bookImage"
-        android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
         android:text="TextView" />
 </RelativeLayout>
