@@ -39,27 +39,27 @@ public class GoodReads {
         call.enqueue(callback);
     }
 
-    public static List<Work> workResults(Response response) {
-        List<Work> result = new ArrayList<>();
-
-        try {
-            String xmlData = response.body().string();
-
-            // logger.info("jsonData: " + xmlData);
-            if (response.isSuccessful()) {
-                JSONObject responseJson = XML.toJSONObject(xmlData);
-                JSONArray jsonArray = responseJson.getJSONObject("GoodreadsResponse")
-                        .getJSONObject("search")
-                        .getJSONObject("results")
-                        .getJSONArray("work");
-
-                Type Work = new TypeToken<List<Work>>() {}.getType();
-                Gson gson = new GsonBuilder().create();
-                result = gson.fromJson(jsonArray.toString(), Work);
-            }
-        } catch (JSONException | NullPointerException | IOException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
+//    public static List<Work> workResults(Response response) {
+//        List<Work> result = new ArrayList<>();
+//
+//        try {
+//            String xmlData = response.body().string();
+//
+//            // logger.info("jsonData: " + xmlData);
+//            if (response.isSuccessful()) {
+//                JSONObject responseJson = XML.toJSONObject(xmlData);
+//                JSONArray jsonArray = responseJson.getJSONObject("GoodreadsResponse")
+//                        .getJSONObject("search")
+//                        .getJSONObject("results")
+//                        .getJSONArray("work");
+//
+//                Type Work = new TypeToken<List<Work>>() {}.getType();
+//                Gson gson = new GsonBuilder().create();
+//                result = gson.fromJson(jsonArray.toString(), Work);
+//            }
+//        } catch (JSONException | NullPointerException | IOException e) {
+//            e.printStackTrace();
+//        }
+//        return result;
+//    }
 }

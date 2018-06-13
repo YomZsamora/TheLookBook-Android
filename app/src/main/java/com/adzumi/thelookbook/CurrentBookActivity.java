@@ -8,10 +8,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.XML;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CurrentBookActivity extends AppCompatActivity {
+
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.currentBookTextView) TextView mCurrentBookTextView;
     @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
@@ -30,7 +37,8 @@ public class CurrentBookActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
-        mCurrentBookTextView.setText("" + currentBook + "");
+//        mCurrentBookTextView.setText("" + currentBook + "");
+        getBooks("stephen king");
     }
 
     @Override
@@ -48,8 +56,22 @@ public class CurrentBookActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             @Override
-            public void onResponse(okhttp3.Call call, okhttp3.Response response) throws java.io.IOException {
+            public void onResponse(okhttp3.Call call, okhttp3.Response response) {
 
+                try {
+                    String xmlData = response.body().string();
+                    if (response.isSuccessful()) {
+                        org.json.JSONObject responseJson = org.json.XML.toJSONObject(xmlData);
+                        org.json.JSONArray jsonArray = responseJson.getJSONObject("GoodreadsResponse")
+                        .getJSONObject("search")
+                        .getJSONObject("results")
+                        .getJSONArray("work");
+
+                        android.util.Log.v(TAG, jsonArray.toString());
+                    }
+                } catch (java.io.IOException | JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
