@@ -1,7 +1,7 @@
 
 package com.adzumi.thelookbook.models;
 
-import com.adzumi.thelookbook.Results;
+import com.adzumi.thelookbook.models.Results;
 
 import java.util.HashMap;
 import java.util.Map;

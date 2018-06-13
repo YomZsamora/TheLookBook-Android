@@ -1,14 +1,14 @@
 
 package com.adzumi.thelookbook.models;
 
-import com.adzumi.thelookbook.BestBook;
-import com.adzumi.thelookbook.BooksCount;
-import com.adzumi.thelookbook.Id;
-import com.adzumi.thelookbook.OriginalPublicationDay;
-import com.adzumi.thelookbook.OriginalPublicationMonth;
-import com.adzumi.thelookbook.OriginalPublicationYear;
-import com.adzumi.thelookbook.RatingsCount;
-import com.adzumi.thelookbook.TextReviewsCount;
+import com.adzumi.thelookbook.models.BestBook;
+import com.adzumi.thelookbook.models.BooksCount;
+import com.adzumi.thelookbook.models.Id;
+import com.adzumi.thelookbook.models.OriginalPublicationDay;
+import com.adzumi.thelookbook.models.OriginalPublicationMonth;
+import com.adzumi.thelookbook.models.OriginalPublicationYear;
+import com.adzumi.thelookbook.models.RatingsCount;
+import com.adzumi.thelookbook.models.TextReviewsCount;
 
 import java.util.HashMap;
 import java.util.Map;

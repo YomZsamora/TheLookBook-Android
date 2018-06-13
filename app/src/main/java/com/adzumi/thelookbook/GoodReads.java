@@ -1,6 +1,6 @@
 package com.adzumi.thelookbook;
 
-import com.adzumi.thelookbook.Work;
+import com.adzumi.thelookbook.models.Work;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

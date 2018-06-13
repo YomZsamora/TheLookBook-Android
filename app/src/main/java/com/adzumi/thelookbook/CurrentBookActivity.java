@@ -39,4 +39,18 @@ public class CurrentBookActivity extends AppCompatActivity {
         inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
+
+    private void getBooks(String searchBook) {
+        final GoodReads findBook = new GoodReads();
+        findBook.findBooks(searchBook, new okhttp3.Callback() {
+            @Override
+            public void onFailure(okhttp3.Call call, java.io.IOException e) {
+                e.printStackTrace();
+            }
+            @Override
+            public void onResponse(okhttp3.Call call, okhttp3.Response response) throws java.io.IOException {
+
+            }
+        });
+    }
 }
