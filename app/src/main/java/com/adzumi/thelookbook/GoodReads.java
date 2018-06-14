@@ -28,7 +28,7 @@ public class GoodReads {
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.API_PARAMETER,Constants.GOODREADS_API_KEY);
-        urlBuilder.addQueryParameter(Constants.QUERY_PARAMETER,"stephen king");
+        urlBuilder.addQueryParameter(Constants.QUERY_PARAMETER,bookSearched);
         String url = urlBuilder.build().toString();
 
         Request request= new Request.Builder()

@@ -8,7 +8,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.TextView;
 
 import com.adzumi.thelookbook.models.Work;
 
@@ -27,12 +26,12 @@ import okhttp3.Response;
 public class CurrentBookActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
-    private BooksListAdapter mAdapter;
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    private MyBooksAdapter mAdapter;
+    @BindView(R.id.myBooksRecyclerView) RecyclerView mBooksRecyclerView;
     public List<Work> mBooks = new ArrayList<>();
 
-    @BindView(R.id.currentBookTextView) TextView mCurrentBookTextView;
-    @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
+//    @BindView(R.id.currentBookTextView) TextView mCurrentBookTextView;
+//    @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +40,16 @@ public class CurrentBookActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
-        mReadWhatTextView.setTypeface(openSansFontLight);
+//        mReadWhatTextView.setTypeface(openSansFontLight);
 
         Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
-        mCurrentBookTextView.setTypeface(openSansFont);
+//        mCurrentBookTextView.setTypeface(openSansFont);
 
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
-        mCurrentBookTextView.setText("" + currentBook + "");
-        logBooks("stephen king");
+//        mCurrentBookTextView.setText("" + currentBook + "");
+        getBooks(currentBook);
+        logBooks(currentBook);
     }
 
     @Override
@@ -72,13 +72,13 @@ public class CurrentBookActivity extends AppCompatActivity {
                 mBooks = bookService.bookResults(response);
 
                 CurrentBookActivity.this.runOnUiThread(() -> {
-                    mAdapter = new BooksListAdapter(getApplicationContext(), mBooks);
+                    mAdapter = new MyBooksAdapter(getApplicationContext(), mBooks);
 
-                    mRecyclerView.setAdapter(mAdapter);
+                    mBooksRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager
                             = new LinearLayoutManager(CurrentBookActivity.this);
-                    mRecyclerView.setLayoutManager(layoutManager);
-                    mRecyclerView.setHasFixedSize(true);
+                    mBooksRecyclerView.setLayoutManager(layoutManager);
+                    mBooksRecyclerView.setHasFixedSize(true);
                 });
             }
         });
