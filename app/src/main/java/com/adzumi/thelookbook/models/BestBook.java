@@ -1,20 +1,29 @@
 
 package com.adzumi.thelookbook.models;
 
-import com.adzumi.thelookbook.models.Author;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class BestBook {
 
+    @SerializedName("-type")
+    @Expose
     private String type;
+    @SerializedName("id")
+    @Expose
     private Id_ id;
+    @SerializedName("title")
+    @Expose
     private String title;
+    @SerializedName("author")
+    @Expose
     private Author author;
+    @SerializedName("image_url")
+    @Expose
     private String imageUrl;
+    @SerializedName("small_image_url")
+    @Expose
     private String smallImageUrl;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -88,14 +97,6 @@ public class BestBook {
 
     public void setSmallImageUrl(String smallImageUrl) {
         this.smallImageUrl = smallImageUrl;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

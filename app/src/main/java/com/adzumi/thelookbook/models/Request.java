@@ -1,15 +1,20 @@
 
 package com.adzumi.thelookbook.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Request {
 
+    @SerializedName("authentication")
+    @Expose
     private String authentication;
+    @SerializedName("key")
+    @Expose
     private String key;
+    @SerializedName("method")
+    @Expose
     private String method;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -53,14 +58,6 @@ public class Request {
 
     public void setMethod(String method) {
         this.method = method;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

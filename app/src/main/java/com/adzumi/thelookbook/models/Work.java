@@ -1,30 +1,38 @@
 
 package com.adzumi.thelookbook.models;
 
-import com.adzumi.thelookbook.models.BestBook;
-import com.adzumi.thelookbook.models.BooksCount;
-import com.adzumi.thelookbook.models.Id;
-import com.adzumi.thelookbook.models.OriginalPublicationDay;
-import com.adzumi.thelookbook.models.OriginalPublicationMonth;
-import com.adzumi.thelookbook.models.OriginalPublicationYear;
-import com.adzumi.thelookbook.models.RatingsCount;
-import com.adzumi.thelookbook.models.TextReviewsCount;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Work {
 
+    @SerializedName("id")
+    @Expose
     private Id id;
+    @SerializedName("books_count")
+    @Expose
     private BooksCount booksCount;
+    @SerializedName("ratings_count")
+    @Expose
     private RatingsCount ratingsCount;
+    @SerializedName("text_reviews_count")
+    @Expose
     private TextReviewsCount textReviewsCount;
+    @SerializedName("original_publication_year")
+    @Expose
     private OriginalPublicationYear originalPublicationYear;
+    @SerializedName("original_publication_month")
+    @Expose
     private OriginalPublicationMonth originalPublicationMonth;
+    @SerializedName("original_publication_day")
+    @Expose
     private OriginalPublicationDay originalPublicationDay;
-    private String average_rating;
+    @SerializedName("average_rating")
+    @Expose
+    private String averageRating;
+    @SerializedName("best_book")
+    @Expose
     private BestBook bestBook;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -38,14 +46,14 @@ public class Work {
      * @param originalPublicationMonth
      * @param textReviewsCount
      * @param id
-     * @param average_rating
+     * @param averageRating
      * @param ratingsCount
      * @param bestBook
      * @param originalPublicationDay
      * @param originalPublicationYear
      * @param booksCount
      */
-    public Work(Id id, BooksCount booksCount, RatingsCount ratingsCount, TextReviewsCount textReviewsCount, OriginalPublicationYear originalPublicationYear, OriginalPublicationMonth originalPublicationMonth, OriginalPublicationDay originalPublicationDay, String average_rating, BestBook bestBook) {
+    public Work(Id id, BooksCount booksCount, RatingsCount ratingsCount, TextReviewsCount textReviewsCount, OriginalPublicationYear originalPublicationYear, OriginalPublicationMonth originalPublicationMonth, OriginalPublicationDay originalPublicationDay, String averageRating, BestBook bestBook) {
         super();
         this.id = id;
         this.booksCount = booksCount;
@@ -54,7 +62,7 @@ public class Work {
         this.originalPublicationYear = originalPublicationYear;
         this.originalPublicationMonth = originalPublicationMonth;
         this.originalPublicationDay = originalPublicationDay;
-        this.average_rating = average_rating;
+        this.averageRating = averageRating;
         this.bestBook = bestBook;
     }
 
@@ -115,11 +123,11 @@ public class Work {
     }
 
     public String getAverageRating() {
-        return average_rating;
+        return averageRating;
     }
 
     public void setAverageRating(String averageRating) {
-        this.average_rating = averageRating;
+        this.averageRating = averageRating;
     }
 
     public BestBook getBestBook() {
@@ -128,14 +136,6 @@ public class Work {
 
     public void setBestBook(BestBook bestBook) {
         this.bestBook = bestBook;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

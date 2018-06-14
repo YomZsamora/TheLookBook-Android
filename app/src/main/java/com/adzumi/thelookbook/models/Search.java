@@ -1,21 +1,32 @@
 
 package com.adzumi.thelookbook.models;
 
-import com.adzumi.thelookbook.models.Results;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Search {
 
+    @SerializedName("query")
+    @Expose
     private String query;
+    @SerializedName("results-start")
+    @Expose
     private String resultsStart;
+    @SerializedName("results-end")
+    @Expose
     private String resultsEnd;
+    @SerializedName("total-results")
+    @Expose
     private String totalResults;
+    @SerializedName("source")
+    @Expose
     private String source;
+    @SerializedName("query-time-seconds")
+    @Expose
     private String queryTimeSeconds;
+    @SerializedName("results")
+    @Expose
     private Results results;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -99,14 +110,6 @@ public class Search {
 
     public void setResults(Results results) {
         this.results = results;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
