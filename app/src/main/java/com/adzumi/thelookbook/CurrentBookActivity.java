@@ -2,23 +2,34 @@ package com.adzumi.thelookbook;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.TextView;
 
-import org.json.JSONArray;
+import com.adzumi.thelookbook.models.Work;
+
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.XML;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
+
 
 public class CurrentBookActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
+    private BooksListAdapter mAdapter;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    public List<Work> mBooks = new ArrayList<>();
 
     @BindView(R.id.currentBookTextView) TextView mCurrentBookTextView;
     @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
@@ -38,7 +49,7 @@ public class CurrentBookActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
         mCurrentBookTextView.setText("" + currentBook + "");
-        getBooks("stephen king");
+        logBooks("stephen king");
     }
 
     @Override
@@ -49,6 +60,31 @@ public class CurrentBookActivity extends AppCompatActivity {
     }
 
     private void getBooks(String searchBook) {
+        final GoodReads bookService = new GoodReads();
+        bookService.findBooks(searchBook, new Callback() {
+            @Override
+            public void onFailure(okhttp3.Call call, java.io.IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws java.io.IOException {
+                mBooks = bookService.bookResults(response);
+
+                CurrentBookActivity.this.runOnUiThread(() -> {
+                    mAdapter = new BooksListAdapter(getApplicationContext(), mBooks);
+
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager
+                            = new LinearLayoutManager(CurrentBookActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+                });
+            }
+        });
+    }
+
+    private void logBooks(String searchBook) {
         final GoodReads findBook = new GoodReads();
         findBook.findBooks(searchBook, new okhttp3.Callback() {
             @Override
