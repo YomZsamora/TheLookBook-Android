@@ -22,7 +22,7 @@ public class Work {
     private OriginalPublicationYear originalPublicationYear;
     private OriginalPublicationMonth originalPublicationMonth;
     private OriginalPublicationDay originalPublicationDay;
-    private String averageRating;
+    private String average_rating;
     private BestBook bestBook;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -38,14 +38,14 @@ public class Work {
      * @param originalPublicationMonth
      * @param textReviewsCount
      * @param id
-     * @param averageRating
+     * @param average_rating
      * @param ratingsCount
      * @param bestBook
      * @param originalPublicationDay
      * @param originalPublicationYear
      * @param booksCount
      */
-    public Work(Id id, BooksCount booksCount, RatingsCount ratingsCount, TextReviewsCount textReviewsCount, OriginalPublicationYear originalPublicationYear, OriginalPublicationMonth originalPublicationMonth, OriginalPublicationDay originalPublicationDay, String averageRating, BestBook bestBook) {
+    public Work(Id id, BooksCount booksCount, RatingsCount ratingsCount, TextReviewsCount textReviewsCount, OriginalPublicationYear originalPublicationYear, OriginalPublicationMonth originalPublicationMonth, OriginalPublicationDay originalPublicationDay, String average_rating, BestBook bestBook) {
         super();
         this.id = id;
         this.booksCount = booksCount;
@@ -54,7 +54,7 @@ public class Work {
         this.originalPublicationYear = originalPublicationYear;
         this.originalPublicationMonth = originalPublicationMonth;
         this.originalPublicationDay = originalPublicationDay;
-        this.averageRating = averageRating;
+        this.average_rating = average_rating;
         this.bestBook = bestBook;
     }
 
@@ -115,11 +115,11 @@ public class Work {
     }
 
     public String getAverageRating() {
-        return averageRating;
+        return average_rating;
     }
 
     public void setAverageRating(String averageRating) {
-        this.averageRating = averageRating;
+        this.average_rating = averageRating;
     }
 
     public BestBook getBestBook() {

@@ -37,7 +37,7 @@ public class CurrentBookActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
-//        mCurrentBookTextView.setText("" + currentBook + "");
+        mCurrentBookTextView.setText("" + currentBook + "");
         getBooks("stephen king");
     }
 
