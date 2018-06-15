@@ -1,5 +1,6 @@
-package com.adzumi.thelookbook;
+package com.adzumi.thelookbook.services;
 
+import com.adzumi.thelookbook.Constants;
 import com.adzumi.thelookbook.models.Work;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

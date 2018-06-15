@@ -1,4 +1,4 @@
-package com.adzumi.thelookbook;
+package com.adzumi.thelookbook.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.adzumi.thelookbook.R;
 
 public class CustomAdapter extends ArrayAdapter {
 

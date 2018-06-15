@@ -1,4 +1,4 @@
-package com.adzumi.thelookbook;
+package com.adzumi.thelookbook.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.adzumi.thelookbook.R;
 import com.adzumi.thelookbook.models.Work;
 import com.squareup.picasso.Picasso;
 

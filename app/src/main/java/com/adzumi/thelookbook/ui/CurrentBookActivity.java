@@ -1,4 +1,4 @@
-package com.adzumi.thelookbook;
+package com.adzumi.thelookbook.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 
+import com.adzumi.thelookbook.services.GoodReads;
+import com.adzumi.thelookbook.adapters.MyBooksAdapter;
+import com.adzumi.thelookbook.R;
 import com.adzumi.thelookbook.models.Work;
 
 import java.util.ArrayList;

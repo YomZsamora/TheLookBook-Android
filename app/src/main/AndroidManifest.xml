@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,21 +20,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.HomeActivity"
             android:resource="@xml/searchable"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adzumi.thelookbook.MainActivity">
+                android:value="com.adzumi.thelookbook.ui.MainActivity">
             </meta-data>
         </activity>
 
-        <activity android:name=".CurrentBookActivity"
+        <activity android:name=".ui.CurrentBookActivity"
             android:resource="@xml/searchable"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adzumi.thelookbook.MainActivity">
+                android:value="com.adzumi.thelookbook.ui.MainActivity">
             </meta-data>
         </activity>
     </application>

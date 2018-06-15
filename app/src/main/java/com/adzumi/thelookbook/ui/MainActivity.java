@@ -1,4 +1,4 @@
-package com.adzumi.thelookbook;
+package com.adzumi.thelookbook.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,7 +9,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.adzumi.thelookbook.R;
 
 
 public class MainActivity extends AppCompatActivity {
