@@ -11,8 +11,6 @@ import android.view.MenuInflater;
 
 import com.adzumi.thelookbook.models.Work;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class CurrentBookActivity extends AppCompatActivity {
     @BindView(R.id.myBooksRecyclerView) RecyclerView mBooksRecyclerView;
     public List<Work> mBooks = new ArrayList<>();
 
-//    @BindView(R.id.currentBookTextView) TextView mCurrentBookTextView;
+//    @BindView(R.id.bookNameTextView) TextView mBookNameTextView;
 //    @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
 
     @Override
@@ -43,13 +41,13 @@ public class CurrentBookActivity extends AppCompatActivity {
 //        mReadWhatTextView.setTypeface(openSansFontLight);
 
         Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
-//        mCurrentBookTextView.setTypeface(openSansFont);
+//        mBookNameTextView.setTypeface(openSansFont);
 
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
 //        mCurrentBookTextView.setText("" + currentBook + "");
         getBooks(currentBook);
-        logBooks(currentBook);
+//        logBooks(currentBook);
     }
 
     @Override
@@ -63,7 +61,7 @@ public class CurrentBookActivity extends AppCompatActivity {
         final GoodReads bookService = new GoodReads();
         bookService.findBooks(searchBook, new Callback() {
             @Override
-            public void onFailure(okhttp3.Call call, java.io.IOException e) {
+            public void onFailure(Call call, java.io.IOException e) {
                 e.printStackTrace();
             }
 
@@ -80,34 +78,6 @@ public class CurrentBookActivity extends AppCompatActivity {
                     mBooksRecyclerView.setLayoutManager(layoutManager);
                     mBooksRecyclerView.setHasFixedSize(true);
                 });
-            }
-        });
-    }
-
-    private void logBooks(String searchBook) {
-        final GoodReads findBook = new GoodReads();
-        findBook.findBooks(searchBook, new okhttp3.Callback() {
-            @Override
-            public void onFailure(okhttp3.Call call, java.io.IOException e) {
-                e.printStackTrace();
-            }
-            @Override
-            public void onResponse(okhttp3.Call call, okhttp3.Response response) {
-
-                try {
-                    String xmlData = response.body().string();
-                    if (response.isSuccessful()) {
-                        org.json.JSONObject responseJson = org.json.XML.toJSONObject(xmlData);
-                        org.json.JSONArray jsonArray = responseJson.getJSONObject("GoodreadsResponse")
-                        .getJSONObject("search")
-                        .getJSONObject("results")
-                        .getJSONArray("work");
-
-                        android.util.Log.v(TAG, jsonArray.toString());
-                    }
-                } catch (java.io.IOException | JSONException e) {
-                    e.printStackTrace();
-                }
             }
         });
     }

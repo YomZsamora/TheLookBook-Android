@@ -1,7 +1,6 @@
 package com.adzumi.thelookbook;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +10,6 @@ import android.widget.TextView;
 
 import com.adzumi.thelookbook.models.Work;
 import com.squareup.picasso.Picasso;
-
-import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +29,7 @@ public class MyBooksAdapter
 
     @Override
     public void onBindViewHolder(BookViewHolder holder, int position) {
-        holder.bindRestaurant(mBooks.get(position));
+        holder.bindBooks(mBooks.get(position));
     }
 
     @Override
@@ -48,8 +45,7 @@ public class MyBooksAdapter
         return mBooks.size();
     }
 
-    public class BookViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener {
+    public class BookViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.bookImageView) ImageView mBookImageView;
         @BindView(R.id.bookNameTextView) TextView mBookNameTextView;
         @BindView(R.id.authorTextView) TextView mAuthorTextView;
@@ -61,19 +57,9 @@ public class MyBooksAdapter
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
-            itemView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View v) {
-            int itemPosition = getLayoutPosition();
-            Intent intent = new Intent(mContext, CurrentBookActivity.class);
-            intent.putExtra("position", itemPosition);
-            intent.putExtra("books", Parcels.wrap(mBooks));
-            mContext.startActivity(intent);
-        }
-
-        public void bindRestaurant(Work work) {
+        public void bindBooks(Work work) {
             mBookNameTextView.setText(work.getBestBook().getTitle());
             mAuthorTextView.setText(work.getBestBook().getAuthor().getName());
             mRatingTextView.setText(work.getAverageRating());

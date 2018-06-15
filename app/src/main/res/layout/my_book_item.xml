@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="127dp"
         android:background="#ffffff"
         android:orientation="vertical"
         android:padding="10dp">
@@ -14,10 +14,9 @@
             android:id="@+id/bookNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Book Name"
+            android:text=""
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/authorTextView"
@@ -46,6 +45,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignTop="@+id/bookImageView"
+                android:layout_marginRight="0dp"
                 android:text="Rating"
                 android:textColor="@color/colorAccent" />
         </RelativeLayout>
