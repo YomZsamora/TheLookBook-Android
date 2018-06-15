@@ -5,28 +5,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="127dp"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            android:id="@+id/bookNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/colorPrimary"
-            android:textSize="12dp" />
 
-        <TextView
-            android:id="@+id/authorTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/bookNameTextView"
-            android:text="Author Name"
-            android:textStyle="italic" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -40,14 +24,39 @@
 
             <TextView
                 android:id="@+id/ratingTextView"
-                android:layout_width="315dp"
+                android:layout_width="278dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/bookImageView"
-                android:layout_marginRight="0dp"
+                android:layout_alignBottom="@+id/bookImageView"
+                android:layout_alignParentEnd="true"
                 android:text="Rating"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorTextIcons"
+                android:textSize="11dp"
+                android:layout_alignParentRight="true" />
+
+            <TextView
+                android:id="@+id/bookNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/ratingTextView"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Book Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp"
+                android:layout_alignLeft="@+id/ratingTextView" />
+
+            <TextView
+                android:id="@+id/authorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/ratingTextView"
+                android:layout_below="@+id/bookNameTextView"
+                android:fontFamily="@font/opensans_lightitalic"
+                android:paddingBottom="5dp"
+                android:text="Author Name"
+                android:textSize="12dp"
+                android:textColor="@color/colorTextIcons"
+                android:layout_alignLeft="@+id/ratingTextView" />
         </RelativeLayout>
 
     </LinearLayout>

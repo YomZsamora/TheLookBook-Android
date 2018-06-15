@@ -8,11 +8,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.TextView;
 
-import com.adzumi.thelookbook.services.GoodReads;
-import com.adzumi.thelookbook.adapters.MyBooksAdapter;
 import com.adzumi.thelookbook.R;
+import com.adzumi.thelookbook.adapters.MyBooksAdapter;
 import com.adzumi.thelookbook.models.Work;
+import com.adzumi.thelookbook.services.GoodReads;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class CurrentBookActivity extends AppCompatActivity {
     @BindView(R.id.myBooksRecyclerView) RecyclerView mBooksRecyclerView;
     public List<Work> mBooks = new ArrayList<>();
 
-//    @BindView(R.id.bookNameTextView) TextView mBookNameTextView;
+    @BindView(R.id.searchQueryTextView) TextView mSearchQueryTextView;
 //    @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
 
     @Override
@@ -41,16 +42,15 @@ public class CurrentBookActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
-//        mReadWhatTextView.setTypeface(openSansFontLight);
+//        mBookNameTextView.setTypeface(openSansFontLight);
 
         Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
 //        mBookNameTextView.setTypeface(openSansFont);
 
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
-//        mCurrentBookTextView.setText("" + currentBook + "");
+        mSearchQueryTextView.setText("Search Results For " + currentBook);
         getBooks(currentBook);
-//        logBooks(currentBook);
     }
 
     @Override

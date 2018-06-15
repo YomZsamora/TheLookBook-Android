@@ -12,7 +12,6 @@ import com.adzumi.thelookbook.R;
 import com.adzumi.thelookbook.models.Work;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -20,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class MyBooksAdapter
         extends RecyclerView.Adapter<MyBooksAdapter.BookViewHolder> {
-    private List<Work> mBooks = new ArrayList<>();
+    private List<Work> mBooks;
     private Context mContext;
 
     public MyBooksAdapter(Context context, List<Work> myBooks) {
@@ -62,8 +61,8 @@ public class MyBooksAdapter
 
         public void bindBooks(Work work) {
             mBookNameTextView.setText(work.getBestBook().getTitle());
-            mAuthorTextView.setText(work.getBestBook().getAuthor().getName());
-            mRatingTextView.setText(work.getAverageRating());
+            mAuthorTextView.setText("By " + work.getBestBook().getAuthor().getName());
+            mRatingTextView.setText("Rating: " + work.getAverageRating() + "/5");
 
             if (!(work.getBestBook().getSmallImageUrl().isEmpty())) {
                 Picasso.with(mContext).load(work.getBestBook().getSmallImageUrl())
