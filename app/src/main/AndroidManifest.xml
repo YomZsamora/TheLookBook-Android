@@ -21,20 +21,28 @@
         </activity>
         <activity
             android:name=".ui.HomeActivity"
-            android:resource="@xml/searchable"
             android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <meta-data
+                android:resource="@xml/searchable"
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adzumi.thelookbook.ui.MainActivity">
+                android:value="com.adzumi.thelookbook.ui.HomeActivity">
             </meta-data>
         </activity>
 
         <activity android:name=".ui.CurrentBookActivity"
             android:resource="@xml/searchable"
             android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
             <meta-data
+                android:resource="@xml/searchable"
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adzumi.thelookbook.ui.MainActivity">
+                android:value="com.adzumi.thelookbook.ui.HomeActivity">
             </meta-data>
         </activity>
     </application>

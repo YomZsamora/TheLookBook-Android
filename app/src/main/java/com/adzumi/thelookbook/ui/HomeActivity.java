@@ -1,17 +1,13 @@
 package com.adzumi.thelookbook.ui;
 
-import com.adzumi.thelookbook.adapters.CustomAdapter;
-import com.adzumi.thelookbook.R;
-
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,6 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.adzumi.thelookbook.R;
+import com.adzumi.thelookbook.adapters.CustomAdapter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -30,6 +32,8 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.booksTextView) TextView mBooksTextView;
     @BindView(R.id.searchBookButton) Button mSearchBookButton;
     @BindView(R.id.whichBookEditText) EditText mWhichBookEditText;
+
+    public static final String TAG = HomeActivity.class.getSimpleName();
 
     private int[] booksImages = new int[] {R.drawable.theshining, R.drawable.it,
             R.drawable.thestand, R.drawable.thegunslinger, R.drawable.goodreads, R.drawable.misery,
@@ -79,6 +83,30 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+        searchView.setQueryHint("Search Author / Book ...");
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //Log.e("onQueryTextChange", "called");
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(HomeActivity.this, CurrentBookActivity.class);
+                intent.putExtra("currentBook", query);
+                startActivity(intent);
+                return false;
+            }
+        });
         return true;
     }
 }

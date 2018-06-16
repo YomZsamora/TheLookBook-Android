@@ -3,22 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/searchQueryTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/opensans_semibolditalic"
-        android:paddingLeft="15dp"
-        android:paddingTop="15dp"
-        android:text="@string/currently_reading"
-        android:textSize="15dp" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myBooksRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="510dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

@@ -1,14 +1,15 @@
 package com.adzumi.thelookbook.ui;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.TextView;
 
 import com.adzumi.thelookbook.R;
 import com.adzumi.thelookbook.adapters.MyBooksAdapter;
@@ -32,24 +33,16 @@ public class CurrentBookActivity extends AppCompatActivity {
     @BindView(R.id.myBooksRecyclerView) RecyclerView mBooksRecyclerView;
     public List<Work> mBooks = new ArrayList<>();
 
-    @BindView(R.id.searchQueryTextView) TextView mSearchQueryTextView;
-//    @BindView(R.id.readWhatTextView) TextView mReadWhatTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_book);
+//        handleIntent(getIntent());
         ButterKnife.bind(this);
-
-        Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
-//        mBookNameTextView.setTypeface(openSansFontLight);
-
-        Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
-//        mBookNameTextView.setTypeface(openSansFont);
 
         Intent intent = getIntent();
         String currentBook = intent.getStringExtra("currentBook");
-        mSearchQueryTextView.setText("Search Results For " + currentBook);
+//        mSearchQueryTextView.setText("Search Results For " + currentBook);
         getBooks(currentBook);
     }
 
@@ -57,8 +50,28 @@ public class CurrentBookActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+        searchView.setQueryHint("Search Author / Book ...");
         return true;
     }
+
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        handleIntent(intent);
+//    }
+//
+//    private void handleIntent(Intent intent) {
+//
+//        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+//            String query = intent.getStringExtra(SearchManager.QUERY);
+//            getBooks(query);
+//        }
+//    }
 
     private void getBooks(String searchBook) {
         final GoodReads bookService = new GoodReads();
