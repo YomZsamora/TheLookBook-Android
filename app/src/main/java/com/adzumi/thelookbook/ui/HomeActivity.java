@@ -9,10 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,12 +23,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
-    @BindView(R.id.whichBookTextView) TextView whichBookTextView;
     @BindView(R.id.winnersTextView) TextView mWinnersTextView;
     @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.booksTextView) TextView mBooksTextView;
-    @BindView(R.id.searchBookButton) Button mSearchBookButton;
-    @BindView(R.id.whichBookEditText) EditText mWhichBookEditText;
 
     public static final String TAG = HomeActivity.class.getSimpleName();
 
@@ -51,9 +45,10 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
+
+
         Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
         introductionTextView.setTypeface(openSansFontLight);
-        whichBookTextView.setTypeface(openSansFontLight);
 
         Typeface openSansFontItalic = Typeface.createFromAsset(getAssets(), "fonts/opensans_italic.ttf");
         mWinnersTextView.setTypeface(openSansFontItalic);
@@ -65,16 +60,6 @@ public class HomeActivity extends AppCompatActivity {
         mListView.setAdapter(adapter);
 
         mBooksTextView.setText("Here's a list of some of Stephen King's Books: ");
-
-        mSearchBookButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String currentBook = mWhichBookEditText.getText().toString();
-                Intent intent = new Intent(HomeActivity.this, CurrentBookActivity.class);
-                intent.putExtra("currentBook", currentBook);
-                startActivity(intent);
-            }
-        });
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
@@ -102,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(HomeActivity.this, CurrentBookActivity.class);
-                intent.putExtra("currentBook", query);
+                intent.putExtra("query", query);
                 startActivity(intent);
                 return false;
             }

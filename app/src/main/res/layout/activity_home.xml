@@ -1,108 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:focusableInTouchMode="true">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:contentDescription="@string/winners"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/whichBookEditText"
-        android:src="@drawable/bestbooks" />
-
-    <TextView
-        android:id="@+id/introductionTextView"
-        android:layout_width="352dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/home_intro" />
-
-    <TextView
-        android:id="@+id/whichBookTextView"
+    <ProgressBar
+        android:id="@+id/progressBar_cyclic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/introductionTextView"
-        android:layout_alignLeft="@+id/introductionTextView"
-        android:layout_marginTop="78dp"
-        android:paddingBottom="8dp"
-        android:text="@string/what_reading" />
-
-    <EditText
-        android:id="@+id/whichBookEditText"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/introductionTextView"
-        android:layout_alignLeft="@+id/introductionTextView"
-        android:layout_below="@+id/whichBookTextView"
-        android:layout_marginStart="-3dp"
-        android:layout_marginLeft="-3dp"
-        android:ems="11"
-        android:inputType="textPersonName"
-        android:hint="@string/search_book_hint" />
-
-    <Button
-        android:id="@+id/searchBookButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView1"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/search"
-        android:theme="@style/PrimaryButton" />
-
-    <Button
-        android:id="@+id/viewWinnersButton"
-        android:layout_width="319dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
-        android:layout_centerHorizontal="true"
-        android:text="@string/view_winners"
-        android:theme="@style/PrimaryButton" />
-
-    <TextView
-        android:id="@+id/winnersTextView"
-        android:layout_width="315dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viewWinnersButton"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="@string/announce_winners"
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/booksTextView"
-        android:layout_width="347dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/winnersTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="New Text"
-        android:textSize="12dp" />
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
-        android:id="@+id/infoSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/booksTextView">
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="154dp"
-            android:layout_alignParentBottom="true"
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true" />
+            android:layout_below="@+id/introductionTextView"
+            android:contentDescription="@string/winners"
+            android:src="@drawable/bestbooks" />
+
+        <TextView
+            android:id="@+id/introductionTextView"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/home_intro" />
+
+        <Button
+            android:id="@+id/viewWinnersButton"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/view_winners"
+            android:theme="@style/PrimaryButton" />
+
+        <TextView
+            android:id="@+id/winnersTextView"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewWinnersButton"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/announce_winners"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/booksTextView"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/winnersTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="New Text"
+            android:textSize="12dp" />
+
+        <LinearLayout
+            android:id="@+id/infoSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/booksTextView">
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

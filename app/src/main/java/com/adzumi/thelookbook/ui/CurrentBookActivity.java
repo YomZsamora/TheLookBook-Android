@@ -41,9 +41,8 @@ public class CurrentBookActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String currentBook = intent.getStringExtra("currentBook");
-//        mSearchQueryTextView.setText("Search Results For " + currentBook);
-        getBooks(currentBook);
+        String query = intent.getStringExtra("query");
+        getBooks(query);
     }
 
     @Override
