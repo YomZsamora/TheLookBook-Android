@@ -4,6 +4,9 @@ package com.adzumi.thelookbook.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Search {
 
     @SerializedName("query")
