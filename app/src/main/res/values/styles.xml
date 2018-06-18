@@ -19,4 +19,9 @@
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
+    <style name="darkBrownButton" parent="Theme.AppCompat">
+        <item name="colorButtonNormal">@color/colorTextIcons</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
 </resources>

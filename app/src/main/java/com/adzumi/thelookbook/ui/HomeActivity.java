@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         ArrayAdapter adapter = new CustomAdapter(this, books);
         mListView.setAdapter(adapter);
 
-        mBooksTextView.setText("Here's a list of some of Stephen King's Books: ");
+        mBooksTextView.setText("CATEGORIES ");
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
