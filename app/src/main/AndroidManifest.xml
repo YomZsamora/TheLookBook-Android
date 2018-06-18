@@ -33,7 +33,7 @@
             </meta-data>
         </activity>
 
-        <activity android:name=".ui.CurrentBookActivity"
+        <activity android:name=".ui.SearchResultsActivity"
             android:resource="@xml/searchable"
             android:theme="@style/AppTheme">
             <intent-filter>

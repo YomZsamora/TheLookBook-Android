@@ -26,7 +26,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 
-public class CurrentBookActivity extends AppCompatActivity {
+public class SearchResultsActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
     private MyBooksAdapter mAdapter;
@@ -36,7 +36,7 @@ public class CurrentBookActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_current_book);
+        setContentView(R.layout.activity_search_results);
 //        handleIntent(getIntent());
         ButterKnife.bind(this);
 
@@ -84,12 +84,12 @@ public class CurrentBookActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws java.io.IOException {
                 mBooks = bookService.bookResults(response);
 
-                CurrentBookActivity.this.runOnUiThread(() -> {
+                SearchResultsActivity.this.runOnUiThread(() -> {
                     mAdapter = new MyBooksAdapter(getApplicationContext(), mBooks);
 
                     mBooksRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager
-                            = new LinearLayoutManager(CurrentBookActivity.this);
+                            = new LinearLayoutManager(SearchResultsActivity.this);
                     mBooksRecyclerView.setLayoutManager(layoutManager);
                     mBooksRecyclerView.setHasFixedSize(true);
                 });

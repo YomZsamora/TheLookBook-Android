@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Intent intent = new Intent(HomeActivity.this, CurrentBookActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SearchResultsActivity.class);
                 intent.putExtra("query", query);
                 startActivity(intent);
                 return false;
