@@ -11,4 +11,7 @@
     <string name="search_book_hint">Enter Book ...</string>
     <string name="winners">2017 Winners</string>
     <string name="currently_reading">You are currently reading:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
