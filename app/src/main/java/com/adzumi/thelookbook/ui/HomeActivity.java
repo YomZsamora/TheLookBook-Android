@@ -45,8 +45,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-
-
         Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
         introductionTextView.setTypeface(openSansFontLight);
 
@@ -58,10 +56,6 @@ public class HomeActivity extends AppCompatActivity {
 
         ArrayAdapter adapter = new CustomAdapter(this, books);
         mListView.setAdapter(adapter);
-
-        mBooksTextView.setText("CATEGORIES ");
-
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override

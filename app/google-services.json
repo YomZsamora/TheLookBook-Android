@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "230491496079",
+    "firebase_url": "https://thelookbook-97bc4.firebaseio.com",
+    "project_id": "thelookbook-97bc4",
+    "storage_bucket": "thelookbook-97bc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230491496079:android:e3f6605475afa9f7",
+        "android_client_info": {
+          "package_name": "com.adzumi.thelookbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230491496079-hg4i2d3pdl4pla4bd2cu4hap6jlrgama.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adzumi.thelookbook",
+            "certificate_hash": "0e03a2fac69bbd4cf56bb98949145bdbac2435a9"
+          }
+        },
+        {
+          "client_id": "230491496079-mms2gjn40bk8ed80u94qjjuccclg0ghk.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "230491496079-mms2gjn40bk8ed80u94qjjuccclg0ghk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdtYC0ejs8VtolO7tXcDt03aqgUU1lgA0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230491496079-mms2gjn40bk8ed80u94qjjuccclg0ghk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
