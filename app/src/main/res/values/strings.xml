@@ -6,7 +6,7 @@
     <string name="home_intro">An Android App that uses GoodReads API to retrieve details / data on books and their respective authors. This application is part of the Weekly Independent Project.</string>
     <string name="what_reading">Let\'s Start! Which book are you currently reading?</string>
     <string name="search">Search</string>
-    <string name="view_winners">View Winners</string>
+    <string name="search_author">Search Author</string>
     <string name="announce_winners">Announcing the winners of the 2017 Goodreads Choice Awards, the only major book awards decided by readers.</string>
     <string name="search_book_hint">Enter Book ...</string>
     <string name="winners">2017 Winners</string>

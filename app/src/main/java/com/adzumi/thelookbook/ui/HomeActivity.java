@@ -9,23 +9,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.adzumi.thelookbook.Constants;
 import com.adzumi.thelookbook.R;
 import com.adzumi.thelookbook.adapters.CustomAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private DatabaseReference mSearchedLocationReference;
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.winnersTextView) TextView mWinnersTextView;
     @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.booksTextView) TextView mBooksTextView;
+    @BindView(R.id.searchAuthorEditText) EditText mSearchAuthorEditText;
+    @BindView(R.id.searchAuthorButton) Button mSearchAuthorButton;
 
     public static final String TAG = HomeActivity.class.getSimpleName();
 
@@ -41,6 +50,11 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mSearchedLocationReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_SEARCHED_BOOK);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
@@ -56,6 +70,23 @@ public class HomeActivity extends AppCompatActivity {
 
         ArrayAdapter adapter = new CustomAdapter(this, books);
         mListView.setAdapter(adapter);
+
+        mSearchAuthorButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v){
+        if(v == mSearchAuthorButton){
+            String author = mSearchAuthorEditText.getText().toString();
+            saveLocationToFirebase(author);
+            Intent intent = new Intent(HomeActivity.this, FaveAuthorDetailActivity.class);
+            intent.putExtra("author", author);
+            startActivity(intent);
+        }
+    }
+
+    public void saveLocationToFirebase(String location) {
+        mSearchedLocationReference.setValue(location);
     }
 
     @Override
