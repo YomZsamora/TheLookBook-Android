@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private DatabaseReference mSearchedLocationReference;
+    private DatabaseReference mSearchedAuthorReference;
 
     @BindView(R.id.introductionTextView) TextView introductionTextView;
     @BindView(R.id.winnersTextView) TextView mWinnersTextView;
@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mSearchedLocationReference = FirebaseDatabase
+        mSearchedAuthorReference = FirebaseDatabase
                 .getInstance()
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_BOOK);
@@ -78,15 +78,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
         if(v == mSearchAuthorButton){
             String author = mSearchAuthorEditText.getText().toString();
-            saveLocationToFirebase(author);
+            saveAuthorToFirebase(author);
             Intent intent = new Intent(HomeActivity.this, FaveAuthorDetailActivity.class);
             intent.putExtra("author", author);
             startActivity(intent);
         }
     }
 
-    public void saveLocationToFirebase(String location) {
-        mSearchedLocationReference.setValue(location);
+    public void saveAuthorToFirebase(String author) {
+        mSearchedAuthorReference.setValue(author);
     }
 
     @Override
