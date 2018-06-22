@@ -12,19 +12,34 @@
         android:layout_height="32dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="63dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginTop="22dp"
         android:fontFamily="@font/opensans_bold"
         android:text=""
-        android:textSize="20dp" />
+        android:textSize="15dp"
+        android:layout_marginRight="70dp"
+        android:layout_alignParentRight="true" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="67dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/myFaveAuthorName"
-        android:layout_marginStart="41dp"
-        app:srcCompat="@drawable/stephenking" />
+        android:layout_marginStart="12dp"
+        app:srcCompat="@drawable/stephenking"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/authorFollowTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/myFaveAuthorName"
+        android:layout_below="@+id/myFaveAuthorName"
+        android:textSize="10dp"
+        android:fontFamily="@font/opensans_light"
+        android:layout_alignLeft="@+id/myFaveAuthorName"
+        android:text="338 845 followers" />
 
 </RelativeLayout>
