@@ -1,5 +1,5 @@
 
-package com.adzumi.thelookbook.models;
+package com.adzumi.thelookbook.models.Work;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

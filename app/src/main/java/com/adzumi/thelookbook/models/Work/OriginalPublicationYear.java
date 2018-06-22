@@ -1,5 +1,5 @@
 
-package com.adzumi.thelookbook.models;
+package com.adzumi.thelookbook.models.Work;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import org.parceler.Parcel;
 
 @Parcel
-public class OriginalPublicationMonth {
+public class OriginalPublicationYear {
 
     @SerializedName("-type")
     @Expose
@@ -15,28 +15,23 @@ public class OriginalPublicationMonth {
     @SerializedName("#text")
     @Expose
     private String text;
-    @SerializedName("-nil")
-    @Expose
-    private String nil;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public OriginalPublicationMonth() {
+    public OriginalPublicationYear() {
     }
 
     /**
      * 
      * @param text
      * @param type
-     * @param nil
      */
-    public OriginalPublicationMonth(String type, String text, String nil) {
+    public OriginalPublicationYear(String type, String text) {
         super();
         this.type = type;
         this.text = text;
-        this.nil = nil;
     }
 
     public String getType() {
@@ -53,14 +48,6 @@ public class OriginalPublicationMonth {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getNil() {
-        return nil;
-    }
-
-    public void setNil(String nil) {
-        this.nil = nil;
     }
 
 }

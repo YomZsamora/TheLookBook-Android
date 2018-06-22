@@ -1,5 +1,5 @@
 
-package com.adzumi.thelookbook.models;
+package com.adzumi.thelookbook.models.Work;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import org.parceler.Parcel;
 
 @Parcel
-public class Id__ {
+public class TextReviewsCount {
 
     @SerializedName("-type")
     @Expose
@@ -20,7 +20,7 @@ public class Id__ {
      * No args constructor for use in serialization
      * 
      */
-    public Id__() {
+    public TextReviewsCount() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class Id__ {
      * @param text
      * @param type
      */
-    public Id__(String type, String text) {
+    public TextReviewsCount(String type, String text) {
         super();
         this.type = type;
         this.text = text;

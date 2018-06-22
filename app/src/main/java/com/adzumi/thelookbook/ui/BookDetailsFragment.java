@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.adzumi.thelookbook.R;
-import com.adzumi.thelookbook.models.Work;
+import com.adzumi.thelookbook.models.Work.Work;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -48,8 +48,8 @@ public class BookDetailsFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         Picasso.with(view.getContext()).load(mWork.getBestBook().getImageUrl()).into(mBookImageDetail);
-
         mBookTitleDetail.setText(mWork.getBestBook().getTitle());
+        mBookAuthorName.setText(mWork.getBestBook().getTitle());
 
         return view;
     }

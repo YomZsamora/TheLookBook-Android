@@ -13,7 +13,7 @@ import android.view.MenuInflater;
 
 import com.adzumi.thelookbook.R;
 import com.adzumi.thelookbook.adapters.MyBooksAdapter;
-import com.adzumi.thelookbook.models.Work;
+import com.adzumi.thelookbook.models.Work.Work;
 import com.adzumi.thelookbook.services.GoodReads;
 
 import java.util.ArrayList;

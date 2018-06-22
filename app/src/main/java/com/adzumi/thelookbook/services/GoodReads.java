@@ -1,7 +1,7 @@
 package com.adzumi.thelookbook.services;
 
 import com.adzumi.thelookbook.Constants;
-import com.adzumi.thelookbook.models.Work;
+import com.adzumi.thelookbook.models.Work.Work;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

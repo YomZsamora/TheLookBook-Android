@@ -1,5 +1,5 @@
 
-package com.adzumi.thelookbook.models;
+package com.adzumi.thelookbook.models.Work;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import org.parceler.Parcel;
 
 @Parcel
-public class OriginalPublicationYear {
+public class BooksCount {
 
     @SerializedName("-type")
     @Expose
@@ -20,7 +20,7 @@ public class OriginalPublicationYear {
      * No args constructor for use in serialization
      * 
      */
-    public OriginalPublicationYear() {
+    public BooksCount() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class OriginalPublicationYear {
      * @param text
      * @param type
      */
-    public OriginalPublicationYear(String type, String text) {
+    public BooksCount(String type, String text) {
         super();
         this.type = type;
         this.text = text;
