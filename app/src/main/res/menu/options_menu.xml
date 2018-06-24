@@ -4,6 +4,12 @@
     tools:context="codes4.com.simplelistview.MainActivity">
 
     <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/search"
         android:title="search something"
         android:icon="@drawable/ic_search"

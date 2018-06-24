@@ -1,13 +1,10 @@
 package com.adzumi.thelookbook.ui;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.adzumi.thelookbook.R;
 
@@ -16,27 +13,25 @@ import butterknife.ButterKnife;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.welcomeTextView) TextView welcomeTextView;
-    @BindView(R.id.welcomeButton) Button mWelcomeButton;
+    @BindView(R.id.registerTextView) TextView mRegisterTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        Typeface openSansFont = Typeface.createFromAsset(getAssets(), "fonts/opensans_bold.ttf");
-        welcomeTextView.setTypeface(openSansFont);
+        mRegisterTextView.setOnClickListener(this);
+    }
 
-        mWelcomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public void onClick(View view) {
+        if (view == mRegisterTextView) {
+            Intent intent = new Intent(MainActivity.this, UserRegistrationActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
