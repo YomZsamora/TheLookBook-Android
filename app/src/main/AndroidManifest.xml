@@ -73,6 +73,8 @@
                 android:resource="@xml/searchable"
                 android:value="com.adzumi.thelookbook.ui.FaveAuthorDetailActivity" />
         </activity>
+        <activity android:name=".ui.UserRegistrationActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
