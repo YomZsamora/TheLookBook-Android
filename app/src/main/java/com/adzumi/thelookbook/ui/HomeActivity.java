@@ -11,14 +11,18 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.adzumi.thelookbook.Constants;
 import com.adzumi.thelookbook.R;
+import com.adzumi.thelookbook.adapters.CustomAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,22 +33,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 //    @BindView(R.id.introductionTextView) TextView introductionTextView;
 //    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
-//    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.listView) ListView mListView;
 //    @BindView(R.id.booksTextView) TextView mBooksTextView;
 //    @BindView(R.id.searchAuthorEditText) EditText mSearchAuthorEditText;
 //    @BindView(R.id.searchAuthorButton) Button mSearchAuthorButton;
 
     public static final String TAG = HomeActivity.class.getSimpleName();
 
-    private int[] booksImages = new int[] {R.drawable.theshininglarge, R.drawable.it,
-            R.drawable.thestand, R.drawable.thegunslinger, R.drawable.goodreads, R.drawable.misery,
-            R.drawable.petsematary, R.drawable.underthedome, R.drawable.thegreenmile, R.drawable.cujo,
-            R.drawable.doctorsleep, R.drawable.drawingofthethree, R.drawable.goodreads};
-
-    private String[] books = new String[] {"The Shining", "IT: PennyWise the Clown",
-            "The Stand", "The Gunslinger", "Carrie", "Misery",
-            "Pet Sematary", "Under the Dome", "The Green Mile", "Cujo",
-            "Doctor Sleep", "The Drawing of the Three", "Cell"};
+    private String[] books = new String[] {"NON-FICTION", "FICTION",
+            "YOUNG ADULT", "THRILLER", "FANTASY"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,8 +76,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //        Typeface openSansFontSemiBold = Typeface.createFromAsset(getAssets(), "fonts/opensans_semibold.ttf");
 //        mBooksTextView.setTypeface(openSansFontSemiBold);
 
-//        ArrayAdapter adapter = new CustomAdapter(this, books);
-//        mListView.setAdapter(adapter);
+        ArrayAdapter adapter = new CustomAdapter(this, books);
+        mListView.setAdapter(adapter);
 
 //        mSearchAuthorButton.setOnClickListener(this);
     }
@@ -110,7 +107,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
-        searchView.setQueryHint("Search Author / Book ...");
+        searchView.setQueryHint("Title, author, or ISBN");
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 

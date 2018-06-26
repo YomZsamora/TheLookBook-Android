@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
 
 
     <!--<ProgressBar-->
@@ -117,10 +119,10 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
-        android:layout_alignParentLeft="true">
+        android:layout_marginTop="26dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -475,29 +477,37 @@
         android:layout_marginBottom="160dp"
         app:srcCompat="@drawable/bestbooks" />
 
-    <TextView
-        android:id="@+id/findAuthorTextView"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="126dp"
-        android:fontFamily="@font/merriweather_black"
-        android:text="Search Your Favorite Author"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/findAuthorTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-126dp"
-        android:ems="10"
+        android:layout_marginBottom="116dp"
         android:background="@drawable/edittext_border"
+        android:drawableRight="@drawable/baseline_search_24"
+        android:ems="10"
+        android:hint="Who's Your Favorite Author ..."
         android:inputType="textPersonName"
-        android:text="Author's Name ..." />
+        android:textSize="12dp" />
+
+    <LinearLayout
+        android:id="@+id/infoSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="103dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

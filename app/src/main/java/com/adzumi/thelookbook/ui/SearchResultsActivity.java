@@ -55,7 +55,7 @@ public class SearchResultsActivity extends AppCompatActivity {
                 (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
-        searchView.setQueryHint("Search Author / Book ...");
+        searchView.setQueryHint("Title, author, or ISBN");
         return true;
     }
 

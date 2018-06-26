@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
 
     <ImageView
         android:id="@+id/bookImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="61dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="12dp"
-        app:srcCompat="@drawable/theshining" />
+        android:layout_centerVertical="true"
+        android:layout_marginStart="143dp"
+        app:srcCompat="@drawable/plainjane" />
 
     <TextView
         android:id="@+id/authorName"
-        android:layout_width="261dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/bookImage"
-        android:layout_marginLeft="70dp"
-        android:layout_marginStart="70dp"
-        android:text="TextView" />
+        android:layout_centerVertical="true"
+        android:layout_marginStart="42dp"
+        android:text="TextView"
+        android:textSize="10dp"
+        android:fontFamily="@font/merriweather_italic"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="55dp"
+        android:layout_height="61dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/bookImage"
+        app:srcCompat="@drawable/little_panic" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="55dp"
+        android:layout_height="61dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageView3"
+        app:srcCompat="@drawable/giantdays" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="55dp"
+        android:layout_height="61dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageView4"
+        app:srcCompat="@drawable/quotient" />
 </RelativeLayout>
