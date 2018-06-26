@@ -66,7 +66,7 @@ public class MyBooksAdapter
 
         @Override
         public void onClick(View v) {
-            int itemPosition = getLayoutPosition();
+            int itemPosition = getAdapterPosition();
             Intent intent = new Intent(mContext, BookDetailsActivity.class);
             intent.putExtra("position", itemPosition);
             intent.putExtra("work", Parcels.wrap(mWork));

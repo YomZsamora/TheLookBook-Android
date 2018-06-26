@@ -55,7 +55,7 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
     @Override
     public void onClick (View view) {
         if (view == mLoginTextView) {
-            Intent intent = new Intent(UserRegistrationActivity.this, LoginActivity.class);
+            Intent intent = new Intent(UserRegistrationActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();

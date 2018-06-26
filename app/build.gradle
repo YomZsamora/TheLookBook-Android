@@ -57,6 +57,7 @@ dependencies {
     annotationProcessor 'org.parceler:parceler:1.1.6'
     implementation 'com.google.firebase:firebase-database:9.2.1'
     implementation 'com.google.firebase:firebase-auth:9.2.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

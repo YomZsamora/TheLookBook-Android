@@ -3,7 +3,6 @@ package com.adzumi.thelookbook.ui;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,21 +11,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.adzumi.thelookbook.Constants;
 import com.adzumi.thelookbook.R;
-import com.adzumi.thelookbook.adapters.CustomAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -35,16 +27,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    @BindView(R.id.introductionTextView) TextView introductionTextView;
-    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
-    @BindView(R.id.listView) ListView mListView;
-    @BindView(R.id.booksTextView) TextView mBooksTextView;
-    @BindView(R.id.searchAuthorEditText) EditText mSearchAuthorEditText;
-    @BindView(R.id.searchAuthorButton) Button mSearchAuthorButton;
+//    @BindView(R.id.introductionTextView) TextView introductionTextView;
+//    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
+//    @BindView(R.id.listView) ListView mListView;
+//    @BindView(R.id.booksTextView) TextView mBooksTextView;
+//    @BindView(R.id.searchAuthorEditText) EditText mSearchAuthorEditText;
+//    @BindView(R.id.searchAuthorButton) Button mSearchAuthorButton;
 
     public static final String TAG = HomeActivity.class.getSimpleName();
 
-    private int[] booksImages = new int[] {R.drawable.theshining, R.drawable.it,
+    private int[] booksImages = new int[] {R.drawable.theshininglarge, R.drawable.it,
             R.drawable.thestand, R.drawable.thegunslinger, R.drawable.goodreads, R.drawable.misery,
             R.drawable.petsematary, R.drawable.underthedome, R.drawable.thegreenmile, R.drawable.cujo,
             R.drawable.doctorsleep, R.drawable.drawingofthethree, R.drawable.goodreads};
@@ -78,30 +70,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-        Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
-        introductionTextView.setTypeface(openSansFontLight);
+//        Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
+//        introductionTextView.setTypeface(openSansFontLight);
+//
+//        Typeface openSansFontItalic = Typeface.createFromAsset(getAssets(), "fonts/opensans_italic.ttf");
+//        mWinnersTextView.setTypeface(openSansFontItalic);
+//
+//        Typeface openSansFontSemiBold = Typeface.createFromAsset(getAssets(), "fonts/opensans_semibold.ttf");
+//        mBooksTextView.setTypeface(openSansFontSemiBold);
 
-        Typeface openSansFontItalic = Typeface.createFromAsset(getAssets(), "fonts/opensans_italic.ttf");
-        mWinnersTextView.setTypeface(openSansFontItalic);
+//        ArrayAdapter adapter = new CustomAdapter(this, books);
+//        mListView.setAdapter(adapter);
 
-        Typeface openSansFontSemiBold = Typeface.createFromAsset(getAssets(), "fonts/opensans_semibold.ttf");
-        mBooksTextView.setTypeface(openSansFontSemiBold);
-
-        ArrayAdapter adapter = new CustomAdapter(this, books);
-        mListView.setAdapter(adapter);
-
-        mSearchAuthorButton.setOnClickListener(this);
+//        mSearchAuthorButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v){
-        if(v == mSearchAuthorButton){
-            String author = mSearchAuthorEditText.getText().toString();
-            saveAuthorToFirebase(author);
-            Intent intent = new Intent(HomeActivity.this, FaveAuthorDetailActivity.class);
-            intent.putExtra("author", author);
-            startActivity(intent);
-        }
+//        if(v == mSearchAuthorButton){
+//            String author = mSearchAuthorEditText.getText().toString();
+//            saveAuthorToFirebase(author);
+//            Intent intent = new Intent(HomeActivity.this, FaveAuthorDetailActivity.class);
+//            intent.putExtra("author", author);
+//            startActivity(intent);
+//        }
     }
 
     public void saveAuthorToFirebase(String author) {

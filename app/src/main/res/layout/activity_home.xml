@@ -1,101 +1,503 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent" >
 
-    <ProgressBar
-        android:id="@+id/progressBar_cyclic"
+
+    <!--<ProgressBar-->
+    <!--android:id="@+id/progressBar_cyclic"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:minHeight="50dp"-->
+    <!--android:minWidth="50dp"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/homeLinearLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:focusableInTouchMode="true"-->
+    <!--android:background="#ffffff"-->
+    <!--android:orientation="vertical"-->
+    <!--android:padding="10dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_below="@+id/introductionTextView"-->
+    <!--android:contentDescription="@string/winners"-->
+    <!--android:src="@drawable/bestbooks" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/introductionTextView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginStart="16dp"-->
+    <!--android:text="@string/home_intro"-->
+    <!--android:layout_marginLeft="16dp" />-->
+
+
+    <!--<EditText-->
+    <!--android:id="@+id/searchAuthorEditText"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:hint="Who's your favorite author"-->
+    <!--android:textSize="12dp"/>-->
+
+    <!--<Button-->
+    <!--android:id="@+id/searchAuthorButton"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/search_author"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:theme="@style/darkBrownButton" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/winnersTextView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/searchAuthorButton"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/announce_winners"-->
+    <!--android:textSize="10dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/booksTextView"-->
+    <!--android:layout_width="347dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/winnersTextView"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:text="CATEGORIES"-->
+    <!--android:fontFamily="@font/opensans_bold"-->
+    <!--android:textSize="12dp" />-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/infoSection"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_below="@+id/booksTextView">-->
+
+    <!--<ListView-->
+    <!--android:id="@+id/listView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="185dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <TextView
+        android:id="@+id/popular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minHeight="50dp"
-        android:minWidth="50dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="6dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="7dp"
+        android:text="Popular"
+        android:textSize="18dp"
+        app:fontFamily="@font/merriweather_bold"
+        android:layout_alignParentLeft="true" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentLeft="true">
 
         <LinearLayout
-            android:id="@+id/homeLinearLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            android:background="#ffffff"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/introductionTextView"
-                android:contentDescription="@string/winners"
-                android:src="@drawable/bestbooks" />
-
-            <TextView
-                android:id="@+id/introductionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="16dp"
-                android:text="@string/home_intro"
-                android:layout_marginLeft="16dp" />
-
-
-            <EditText
-                android:id="@+id/searchAuthorEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Who's your favorite author"
-                android:textSize="12dp"/>
-
-            <Button
-                android:id="@+id/searchAuthorButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/search_author"
-                android:textAllCaps="false"
-                android:theme="@style/darkBrownButton" />
-
-            <TextView
-                android:id="@+id/winnersTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/searchAuthorButton"
-                android:layout_centerHorizontal="true"
-                android:gravity="center"
-                android:text="@string/announce_winners"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/booksTextView"
-                android:layout_width="347dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/winnersTextView"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:text="CATEGORIES"
-                android:fontFamily="@font/opensans_bold"
-                android:textSize="12dp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="15dp">
 
             <LinearLayout
-                android:id="@+id/infoSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_below="@+id/booksTextView">
+                android:id="@+id/redqueenLinearLayout"
+                android:layout_width="320dp"
+                android:layout_height="149dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <ListView
-                    android:id="@+id/listView"
-                    android:layout_width="match_parent"
-                    android:layout_height="185dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="131dp">
 
+                    <ImageView
+                        android:id="@+id/redqueenImageView"
+                        android:layout_width="66dp"
+                        android:layout_height="103dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="11dp"
+                        android:src="@drawable/theredqueen" />
+
+                    <TextView
+                        android:id="@+id/redqueentitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/redqueenRatingsTextView"
+                        android:text="Red Queen (Red Queen #1)"
+                        app:fontFamily="@font/merriweather_bold" />
+
+                    <TextView
+                        android:id="@+id/authorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/redqueentitleTextView"
+                        android:layout_marginStart="94dp"
+                        android:fontFamily="@font/merriweather_lightitalic"
+                        android:text="by Victoria Aveyard"
+                        android:textSize="10dp" />
+
+                    <RatingBar
+                        android:id="@+id/redqueenRatingBar"
+                        android:layout_width="252dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:rating="3.52"
+                        android:scaleX=".2"
+                        android:scaleY=".2" />
+
+                    <TextView
+                        android:id="@+id/redqueenRatingsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/authorTextView"
+                        android:layout_marginStart="94dp"
+                        android:text="371,182 Ratings "
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/redqueenRateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/authorTextView"
+                        android:layout_marginEnd="78dp"
+                        android:text="3.52"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/redqueendescriptionTextView"
+                        android:layout_width="227dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="57dp"
+                        android:text="This is a world divided by blood - red or silver. The Reds are commoners, ruled by a Silver elite in possession of god-like superpowers. And to Mare Barrow, a seventeen-year-old Red girl from the poverty-stricken Stilts, it seems..."
+                        android:textSize="10dp" />
+                </RelativeLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/plasticmagicianLinearLayout"
+                android:layout_width="320dp"
+                android:layout_height="149dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="131dp">
+
+                    <ImageView
+                        android:id="@+id/plasticmagicianImageView"
+                        android:layout_width="66dp"
+                        android:layout_height="103dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="11dp"
+                        android:src="@drawable/plasticmagician" />
+
+                    <TextView
+                        android:id="@+id/plasticmagiciantitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="The Plastic Magician"
+                        app:fontFamily="@font/merriweather_bold" />
+
+                    <TextView
+                        android:id="@+id/plasticmagicianauthorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/plasticmagiciantitleTextView"
+                        android:layout_below="@+id/plasticmagiciantitleTextView"
+                        android:fontFamily="@font/merriweather_lightitalic"
+                        android:text="by Charlie N. Holmberg"
+                        android:textSize="10dp" />
+
+                    <RatingBar
+                        android:id="@+id/plasticmagicianRatingBar"
+                        android:layout_width="252dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="50dp"
+                        android:rating="4.21"
+                        android:scaleX=".2"
+                        android:scaleY=".2" />
+
+                    <TextView
+                        android:id="@+id/plasticmagicianRatingsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/plasticmagiciantitleTextView"
+                        android:layout_below="@+id/plasticmagicianauthorTextView"
+                        android:text="2,239 Ratings "
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/plasticmagicianRateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/plasticmagicianauthorTextView"
+                        android:layout_marginEnd="83dp"
+                        android:text="4.21"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/plasticmagiciandescriptionTextView"
+                        android:layout_width="227dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="57dp"
+                        android:text="Alvie Brechenmacher has arrived in London to begin her training in Polymaking—the magical discipline of bespelling plastic. Polymaking is the newest form of magic, and in a field where there is so much left to learn..."
+                        android:textSize="10dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/blackpantherLinearLayout"
+                android:layout_width="320dp"
+                android:layout_height="149dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="131dp">
+
+                    <ImageView
+                        android:id="@+id/blackpantherImageView"
+                        android:layout_width="66dp"
+                        android:layout_height="103dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="11dp"
+                        android:src="@drawable/blackpanther" />
+
+                    <TextView
+                        android:id="@+id/blackPanther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/blackpantherauthorTextView"
+                        android:text="Black Panther: Long Live the King"
+                        app:fontFamily="@font/merriweather_bold" />
+
+                    <TextView
+                        android:id="@+id/blackpantherauthorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/blackpantherratingsTextView"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/merriweather_lightitalic"
+                        android:text="by Nnedi Okorafor"
+                        android:textSize="10dp" />
+
+                    <RatingBar
+                        android:id="@+id/blackpantherRatingBar"
+                        android:layout_width="252dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/blackPanther"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="12dp"
+                        android:rating="3.31"
+                        android:scaleX=".2"
+                        android:scaleY=".2" />
+
+                    <TextView
+                        android:id="@+id/blackpantherratingsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="94dp"
+                        android:layout_marginTop="32dp"
+                        android:text="81 Ratings "
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/blackpantherrateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/blackpantherauthorTextView"
+                        android:layout_marginEnd="93dp"
+                        android:text="3.31"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/blackpantherdescriptionTextView"
+                        android:layout_width="227dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="false"
+                        android:layout_marginTop="57dp"
+                        android:text="This is a world divided by blood - red or silver. The Reds are commoners, ruled by a Silver elite in possession of god-like superpowers. And to Mare Barrow, a seventeen-year-old Red girl from the poverty-stricken Stilts, it seems..."
+                        android:textSize="10dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/asthma_action_plan"
+                android:layout_width="320dp"
+                android:layout_height="149dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="131dp">
+
+                    <ImageView
+                        android:id="@+id/redqueenimage"
+                        android:layout_width="66dp"
+                        android:layout_height="103dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="11dp"
+                        android:src="@drawable/theredqueen" />
+
+                    <TextView
+                        android:id="@+id/redqueentitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/ratingsTextView"
+                        android:text="Red Queen (Red Queen #1)"
+                        app:fontFamily="@font/merriweather_bold" />
+
+                    <TextView
+                        android:id="@+id/authorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/redqueentitle"
+                        android:layout_marginStart="94dp"
+                        android:fontFamily="@font/merriweather_lightitalic"
+                        android:text="by Victoria Aveyard"
+                        android:textSize="10dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="252dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:rating="3.52"
+                        android:scaleX=".2"
+                        android:scaleY=".2" />
+
+                    <TextView
+                        android:id="@+id/ratingsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/authorTextView"
+                        android:layout_marginStart="94dp"
+                        android:text="371,182 Ratings "
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/rateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/authorTextView"
+                        android:layout_marginEnd="78dp"
+                        android:text="3.52"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="227dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="57dp"
+                        android:text="This is a world divided by blood - red or silver. The Reds are commoners, ruled by a Silver elite in possession of god-like superpowers. And to Mare Barrow, a seventeen-year-old Red girl from the poverty-stricken Stilts, it seems..."
+                        android:textSize="10dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
         </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="204dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="160dp"
+        app:srcCompat="@drawable/bestbooks" />
+
+    <TextView
+        android:id="@+id/findAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="126dp"
+        android:fontFamily="@font/merriweather_black"
+        android:text="Search Your Favorite Author"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/findAuthorTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-126dp"
+        android:ems="10"
+        android:background="@drawable/edittext_border"
+        android:inputType="textPersonName"
+        android:text="Author's Name ..." />
+
 
 </RelativeLayout>
