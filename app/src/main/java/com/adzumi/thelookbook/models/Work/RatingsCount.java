@@ -9,10 +9,10 @@ import org.parceler.Parcel;
 @Parcel
 public class RatingsCount {
 
-    @SerializedName("-type")
+    @SerializedName("type")
     @Expose
     private String type;
-    @SerializedName("#text")
+    @SerializedName("content")
     @Expose
     private String text;
 

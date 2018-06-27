@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.adzumi.thelookbook.R;
@@ -16,7 +17,9 @@ import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,6 +57,8 @@ public class MyBooksAdapter
         @BindView(R.id.bookNameTextView) TextView mBookNameTextView;
         @BindView(R.id.authorTextView) TextView mAuthorTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
+        @BindView(R.id.ratingsTextView) TextView mRatingsTextView;
+        @BindView(R.id.ratingBar2) RatingBar mBookRatingBar;
 
         private Context mContext;
 
@@ -75,9 +80,14 @@ public class MyBooksAdapter
 
 
         public void bindBooks(Work work) {
+            NumberFormat formatter = NumberFormat.getNumberInstance(Locale.US);
+            double bookRatings = Double.parseDouble(work.getRatingsCount().getText());
             mBookNameTextView.setText(work.getBestBook().getTitle());
             mAuthorTextView.setText("By " + work.getBestBook().getAuthor().getName());
-            mRatingTextView.setText("Rating: " + work.getAverageRating() + "/5");
+            mRatingTextView.setText(work.getAverageRating() + "/5");
+            mRatingsTextView.setText(formatter.format(bookRatings) + " Ratings");
+            mBookRatingBar.setRating(Float.valueOf(work.getAverageRating()));
+
 
             if (!(work.getBestBook().getSmallImageUrl().isEmpty())) {
                 Picasso.with(mContext).load(work.getBestBook().getSmallImageUrl())

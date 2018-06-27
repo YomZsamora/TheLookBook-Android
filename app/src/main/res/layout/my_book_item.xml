@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -11,8 +13,7 @@
         android:padding="10dp">
 
 
-
-        <RelativeLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="85dp">
 
@@ -24,40 +25,77 @@
 
             <TextView
                 android:id="@+id/ratingTextView"
-                android:layout_width="278dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/bookImageView"
-                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/authorTextView"
+                android:layout_toRightOf="@+id/ratingsTextView"
                 android:text="Rating"
                 android:textColor="@color/colorTextIcons"
                 android:textSize="11dp"
-                android:layout_alignParentRight="true" />
+                app:layout_constraintStart_toEndOf="@+id/ratingBar2"
+                app:layout_constraintTop_toBottomOf="@+id/authorTextView" />
 
             <TextView
                 android:id="@+id/bookNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/ratingTextView"
-                android:fontFamily="@font/opensans_bold"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/merriweather_bold"
                 android:text="Book Name"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorTextIcons"
                 android:textSize="15dp"
-                android:layout_alignLeft="@+id/ratingTextView" />
+                app:layout_constraintStart_toEndOf="@+id/bookImageView"
+                tools:layout_editor_absoluteY="0dp" />
 
             <TextView
                 android:id="@+id/authorTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/ratingTextView"
+                android:layout_alignStart="@+id/bookNameTextView"
                 android:layout_below="@+id/bookNameTextView"
-                android:fontFamily="@font/opensans_lightitalic"
-                android:paddingBottom="5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/merriweather_lightitalic"
+                android:paddingBottom="2dp"
                 android:text="Author Name"
-                android:textSize="12dp"
                 android:textColor="@color/colorTextIcons"
-                android:layout_alignLeft="@+id/ratingTextView" />
-        </RelativeLayout>
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/bookImageView"
+                app:layout_constraintTop_toBottomOf="@+id/bookNameTextView" />
+
+            <TextView
+                android:id="@+id/ratingsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/bookImageView"
+                android:layout_alignStart="@+id/bookNameTextView"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:text="33 568 Ratings"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="11dp"
+                app:layout_constraintStart_toEndOf="@+id/bookImageView"
+                app:layout_constraintTop_toBottomOf="@+id/authorTextView" />
+
+            <RatingBar
+                android:id="@+id/ratingBar2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:numStars="5"
+                android:progressTint="@color/colorPrimaryDark"
+                android:rating="3.52"
+                app:layout_constraintStart_toEndOf="@+id/ratingsTextView"
+                app:layout_constraintTop_toTopOf="@+id/ratingsTextView" />
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
 
