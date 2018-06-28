@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.adzumi.thelookbook.Constants;
 import com.adzumi.thelookbook.R;
@@ -38,6 +39,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //    @BindView(R.id.introductionTextView) TextView introductionTextView;
 //    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
     @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.faveAuthorTextView) TextView mFaveAuthorTextView;
 //    @BindView(R.id.booksTextView) TextView mBooksTextView;
 //    @BindView(R.id.searchAuthorEditText) EditText mSearchAuthorEditText;
 //    @BindView(R.id.searchAuthorButton) Button mSearchAuthorButton;
@@ -77,6 +79,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         ArrayAdapter adapter = new CustomAdapter(this, books);
         mListView.setAdapter(adapter);
 
+        mFaveAuthorTextView.setText("You don't have a favorite author yet!");
 //        mSearchAuthorButton.setOnClickListener(this);
     }
 

@@ -509,5 +509,16 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/faveAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="157dp"
+        android:fontFamily="@font/merriweather_light"
+        android:text="TextView"
+        android:textSize="10dp" />
+
 
 </RelativeLayout>
