@@ -3,7 +3,9 @@ package com.adzumi.thelookbook.ui;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -30,6 +32,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference mSearchedAuthorReference;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
 //    @BindView(R.id.introductionTextView) TextView introductionTextView;
 //    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
@@ -67,14 +71,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-//        Typeface openSansFontLight = Typeface.createFromAsset(getAssets(), "fonts/opensans_light.ttf");
-//        introductionTextView.setTypeface(openSansFontLight);
-//
-//        Typeface openSansFontItalic = Typeface.createFromAsset(getAssets(), "fonts/opensans_italic.ttf");
-//        mWinnersTextView.setTypeface(openSansFontItalic);
-//
-//        Typeface openSansFontSemiBold = Typeface.createFromAsset(getAssets(), "fonts/opensans_semibold.ttf");
-//        mBooksTextView.setTypeface(openSansFontSemiBold);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
         ArrayAdapter adapter = new CustomAdapter(this, books);
         mListView.setAdapter(adapter);
