@@ -84,7 +84,10 @@
         <activity
             android:name=".ui.LoginActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.SavedBooksActivity"></activity>
+        <activity
+            android:name=".ui.SavedBooksActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

@@ -138,6 +138,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             logout();
             return true;
         }
+        if (id == R.id.my_books) {
+            Intent intent = new Intent(HomeActivity.this, SavedBooksActivity.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
