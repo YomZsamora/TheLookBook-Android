@@ -7,4 +7,5 @@ public class Constants {
     public static final String QUERY_PARAMETER = "q";
     public static final String PREFERENCES_NAME_KEY = "username";
     public static final String FIREBASE_CHILD_SEARCHED_BOOK = "favoriteAuthor";
+    public static final String FIREBASE_CHILD_SAVED_BOOKS = "savedBooks";
 }

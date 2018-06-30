@@ -25,7 +25,6 @@
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
@@ -45,7 +44,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:resource="@xml/searchable"
-                android:value="com.adzumi.thelookbook.ui.SearchResultsActivity" />
+                android:value="com.adzumi.thelookbook.ui.HomeActivity" />
         </activity>
         <activity
             android:name=".ui.BookDetailsActivity"
@@ -60,7 +59,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:resource="@xml/searchable"
-                android:value="com.adzumi.thelookbook.ui.BookDetailsActivity" />
+                android:value="com.adzumi.thelookbook.ui.HomeActivity" />
         </activity>
         <activity
             android:name=".ui.FaveAuthorDetailActivity"

@@ -478,7 +478,7 @@
         app:srcCompat="@drawable/bestbooks" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/faveAuthorEditText"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

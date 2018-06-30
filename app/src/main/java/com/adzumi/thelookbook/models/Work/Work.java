@@ -37,6 +37,8 @@ public class Work {
     @Expose
     private BestBook bestBook;
 
+    private String pushId;
+
     /**
      * No args constructor for use in serialization
      * 
@@ -139,6 +141,14 @@ public class Work {
 
     public void setBestBook(BestBook bestBook) {
         this.bestBook = bestBook;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,6 +41,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //    @BindView(R.id.winnersTextView) TextView mWinnersTextView;
     @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.faveAuthorTextView) TextView mFaveAuthorTextView;
+    @BindView(R.id.faveAuthorEditText) EditText mFaveAuthorEditText;
 //    @BindView(R.id.booksTextView) TextView mBooksTextView;
 //    @BindView(R.id.searchAuthorEditText) EditText mSearchAuthorEditText;
 //    @BindView(R.id.searchAuthorButton) Button mSearchAuthorButton;

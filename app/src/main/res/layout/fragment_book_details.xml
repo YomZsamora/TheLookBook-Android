@@ -37,17 +37,6 @@
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/bookDescriptionDetail"
-            android:layout_width="282dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="108dp"
-            android:fontFamily="@font/opensans_regular"
-            android:text="@string/bookDescriptionDetail"
-            android:textSize="11dp" />
-
-        <TextView
             android:id="@+id/bookAuthorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,12 +88,12 @@
         </android.support.constraint.ConstraintLayout>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/saveBookButton"
             android:layout_width="299dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="33dp"
+            android:layout_marginBottom="167dp"
             android:fontFamily="@font/merriweather_regular"
             android:text="Save This Book"
             android:textAllCaps="false"
